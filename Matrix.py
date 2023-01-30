@@ -23,11 +23,24 @@ if len(M1)==len(M2[0]):
         sum.append(a)
     print(sum)
 else:
-    print("Row of first matrix is not equal to colum of second matrix")
+    print("Row of first matrix is not equal to colum of second matrix","so matrix adddition is not possible")
 
-def transposematrix():
+result=[]
+def matmultiply():
     for i in range(len(M1)):
+        l=[]
         for j in range(len(M2[0])):
-            print(M1[j][i],end=' ')
-        print()
-transposematrix()
+            l.append(0)
+        result.append(l)
+    if(len(M1[0])==len(M2)):
+        for i in range(len(M1)):
+            for j in range(len(M2[0])):
+                for k in range(len(result)):
+                    result[i][j]=result[i][j]+M1[i][k]*M2[k][j]
+        return result
+        print(result)
+    else:
+        print("Row of first matrix is not equal to colum of second matrix", "so matrix multiplication is not possible")
+
+
+matmultiply()
